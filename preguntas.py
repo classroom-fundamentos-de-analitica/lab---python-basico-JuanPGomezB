@@ -57,7 +57,16 @@ def pregunta_02():
     ]
 
     """
-    return
+    pandseg_colum=list()
+    for item in x:
+        pandseg_colum.append((item[0],item[1]))
+
+    pandseg_colum.sort(key=lambda a: a[0])
+
+
+
+
+    return pandseg_colum
 
 
 def pregunta_03():
@@ -278,3 +287,4 @@ def pregunta_12():
     return
 
 #print(pregunta_01())
+#print(pregunta_02())
