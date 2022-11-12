@@ -57,16 +57,27 @@ def pregunta_02():
     ]
 
     """
+    from collections import Counter
+
+
     pandseg_colum=list()
     for item in x:
         pandseg_colum.append((item[0],item[1]))
 
-    pandseg_colum.sort(key=lambda a: a[0])
+    #pandseg_colum.sort(key=lambda a: a[0])
+
+    first_element = Counter([x for (x,y) in pandseg_colum])
+    newlist=list()
+
+    for k,v in first_element.items():
+        newlist.append((k,v))
+
+    newlist.sort(key=lambda a: a[0])    
 
 
 
 
-    return pandseg_colum
+    return newlist
 
 
 def pregunta_03():
@@ -287,4 +298,4 @@ def pregunta_12():
     return
 
 #print(pregunta_01())
-#print(pregunta_02())
+print(pregunta_02())
