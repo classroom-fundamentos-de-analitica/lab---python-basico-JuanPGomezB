@@ -145,7 +145,19 @@ def pregunta_04():
     ]
 
     """
-    return
+    listaK = []
+    listaN = []
+    for dato in x:
+        fecha = dato[2].split('-')
+        mes = fecha[1]
+        if mes in listaK:
+            val = listaK.index(mes)
+            listaN[val] += 1
+        else:
+            listaK.append(mes)
+            listaN.append(1)
+    lista = list(zip(listaK, listaN))
+    return sorted(lista, key=lambda tup: tup[0])
 
 
 def pregunta_05():
@@ -163,7 +175,25 @@ def pregunta_05():
     ]
 
     """
-    return
+    listaK = []
+    listaT = []
+    listaMax = []
+    listaMin = []
+
+    for dato in x:
+        letra = dato[0]
+        if letra in listaK:
+            val = listaK.index(letra)
+            listaT[val].append(int(dato[1]))
+        else:
+            listaK.append(letra)
+            listaT.append([int(dato[1])])
+    for ele in listaT:
+        listaMax.append(max(ele))
+        listaMin.append(min(ele))
+
+    lista = list(zip(listaK, listaMax, listaMin))
+    return sorted(lista, key=lambda tup: tup[0])
 
 
 def pregunta_06():
@@ -325,3 +355,4 @@ def pregunta_12():
 #print(pregunta_01())
 #print(pregunta_02())
 #print(pregunta_03())
+print(pregunta_04())
