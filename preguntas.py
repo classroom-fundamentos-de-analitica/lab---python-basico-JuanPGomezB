@@ -95,7 +95,32 @@ def pregunta_03():
     ]
 
     """
-    return
+    pandseg_colum=list()
+    for item in x:
+        pandseg_colum.append((item[0],item[1]))
+
+    pandseg_colum.sort(key=lambda a: a[0])
+    letters=list()
+    numbers=list()
+    for tup in pandseg_colum:
+        if tup[0] not in letters:
+            letters.append(tup[0])
+            c=0
+            for tup2 in pandseg_colum:
+                if tup2[0]==tup[0]:
+                    c=c+int(tup2[1])
+            numbers.append(c)
+        else:
+            continue
+    y = zip(letters,numbers)
+
+    k=list(y)      
+
+
+
+
+
+    return k
 
 
 def pregunta_04():
@@ -298,4 +323,5 @@ def pregunta_12():
     return
 
 #print(pregunta_01())
-print(pregunta_02())
+#print(pregunta_02())
+#print(pregunta_03())
