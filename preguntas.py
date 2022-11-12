@@ -462,7 +462,7 @@ def pregunta_12():
     """
     dic = {}
 
-    for dato in datosPreparados:
+    for dato in x:
         res = []
         letra = dato[0]
 
